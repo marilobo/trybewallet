@@ -15,12 +15,12 @@ class WalletForm extends Component {
     exchangeRates: {},
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { dispatch } = this.props;
     dispatch(thunkWalletAPI());
   }
 
-  handleSelectValue = ({ target }) => {
+  handleInputValue = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
 
@@ -29,23 +29,46 @@ class WalletForm extends Component {
     this.setState((prev) => ({
       exchangeRates: filteredCoins,
       id: prev.id + 1,
-    }));
+    }), () => this.sendToGlobalState());
+  };
 
+  sendToGlobalState = () => {
     const { dispatch } = this.props;
     dispatch(saveExpense(this.state));
+
+    this.setState({
+      value: '',
+      description: '',
+    });
   };
 
   render() {
     const { walletReducer } = this.props;
     const { currencies } = walletReducer;
-    const { currency, method, tag } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     return (
       <div>
-        <p data-testid="value-input">Despesa valor</p>
-        <p data-testid="description-input">Despesa descrição</p>
+        <label htmlFor="description">
+          Descrição
+          <input
+            data-testid="value-input"
+            name="description"
+            value={ description }
+            onChange={ this.handleInputValue }
+          />
+        </label>
+        <label htmlFor="value">
+          Valor
+          <input
+            data-testid="description-input"
+            name="value"
+            value={ value }
+            onChange={ this.handleInputValue }
+          />
+        </label>
         <select
           data-testid="currency-input"
-          onChange={ this.handleSelectValue }
+          onChange={ this.handleInputValue }
           name="currency"
           value={ currency }
         >
@@ -54,7 +77,7 @@ class WalletForm extends Component {
         </select>
         <select
           data-testid="method-input"
-          onChange={ this.handleSelectValue }
+          onChange={ this.handleInputValue }
           name="method"
           value={ method }
         >
@@ -64,7 +87,7 @@ class WalletForm extends Component {
         </select>
         <select
           data-testid="tag-input"
-          onChange={ this.handleSelectValue }
+          onChange={ this.handleInputValue }
           name="tag"
           value={ tag }
         >
