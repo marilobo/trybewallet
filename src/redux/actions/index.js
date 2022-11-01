@@ -1,6 +1,9 @@
+import fetchFunction from '../../helpers/fetchFunction';
+
 export const USER_EMAIL = 'USER_EMAIL';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_ERROR = 'REQUEST_ERROR';
+export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 
 export const userEmail = (charsEmail) => ({
   type: USER_EMAIL,
@@ -17,11 +20,15 @@ export const requestError = (error) => ({
   error,
 });
 
+export const saveExpense = (expense) => ({
+  type: SAVE_EXPENSE,
+  expense,
+});
+
 export function thunkWalletAPI() {
   return async (dispatch) => {
     try {
-      const request = await fetch('https://economia.awesomeapi.com.br/json/all');
-      const data = await request.json();
+      const data = await fetchFunction();
       dispatch(requestSuccess(data));
     } catch (error) {
       dispatch(requestError(error));
