@@ -5,6 +5,7 @@ export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_ERROR = 'REQUEST_ERROR';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 
 export const userEmail = (charsEmail) => ({
   type: USER_EMAIL,
@@ -29,6 +30,11 @@ export const saveExpense = (expense) => ({
 export const deleteExpense = (expense) => ({
   type: DELETE_EXPENSE,
   expense,
+});
+
+export const editExpense = (id) => ({
+  type: EDIT_EXPENSE,
+  id,
 });
 
 export function thunkWalletAPI() {

@@ -20,6 +20,11 @@ class WalletForm extends Component {
     dispatch(thunkWalletAPI());
   }
 
+  componentDidUpdate() {
+    const { walletReducer: { expenses, idToEdit } } = this.props;
+    console.log(expenses[idToEdit]);
+  }
+
   handleInputValue = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
@@ -44,9 +49,15 @@ class WalletForm extends Component {
     });
   };
 
+  editExpense = () => {
+    const { walletReducer: { expenses, idToEdit } } = this.props;
+    const expenseToEdit = expenses[idToEdit];
+    return expenseToEdit;
+  };
+
   render() {
     const { walletReducer } = this.props;
-    const { currencies } = walletReducer;
+    const { currencies, editor } = walletReducer;
     const { value, description, currency, method, tag } = this.state;
     return (
       <div>
@@ -99,12 +110,21 @@ class WalletForm extends Component {
           <option>Transporte</option>
           <option>Saúde</option>
         </select>
-        <button
-          type="button"
-          onClick={ this.addExpense }
-        >
-          Adicionar despesa
-        </button>
+        { !editor
+          ? (
+            <button
+              type="button"
+              onClick={ this.addExpense }
+            >
+              Adicionar despesa
+            </button>)
+          : (
+            <button
+              type="button"
+              onClick={ this.editExpense }
+            >
+              Editar despesa
+            </button>)}
       </div>
     );
   }
