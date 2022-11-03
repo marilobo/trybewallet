@@ -1,4 +1,4 @@
-import { EXPENSE_SUM, REQUEST_ERROR, REQUEST_SUCCESS, SAVE_EXPENSE } from '../actions';
+import { REQUEST_ERROR, REQUEST_SUCCESS, SAVE_EXPENSE } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -7,7 +7,6 @@ const INITIAL_STATE = {
   editor: false,
   idToEdit: 0,
   errorMessage: '',
-  expensesSum: 0,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -27,11 +26,11 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: [...state.expenses, action.expense],
     };
-  case EXPENSE_SUM:
-    return {
-      ...state,
-      expensesSum: action.sum,
-    };
+  // case EXPENSE_SUM:
+  //   return {
+  //     ...state,
+  //     sumExp: sumExp + action.sum,
+  //   };
   default:
     return state;
   }

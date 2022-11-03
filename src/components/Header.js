@@ -7,7 +7,7 @@ class Header extends Component {
     const { email, expenses } = this.props;
     return (
       <div>
-        <span data-testid="email-field">{email}</span>
+        <p data-testid="email-field">{email}</p>
         <span data-testid="total-field">
           {
             expenses.reduce((acc, curr) => (

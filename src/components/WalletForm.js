@@ -25,10 +25,12 @@ class WalletForm extends Component {
   };
 
   addExpense = async () => {
+    const { walletReducer } = this.props;
+    const { expenses } = walletReducer;
     const filteredCoins = await fetchFunction();
-    this.setState((prev) => ({
+    this.setState(({
       exchangeRates: filteredCoins,
-      id: prev.id + 1,
+      id: expenses.length,
     }), () => this.sendToGlobalState());
   };
 
