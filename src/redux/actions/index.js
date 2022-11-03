@@ -4,6 +4,7 @@ export const USER_EMAIL = 'USER_EMAIL';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_ERROR = 'REQUEST_ERROR';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const userEmail = (charsEmail) => ({
   type: USER_EMAIL,
@@ -22,6 +23,11 @@ export const requestError = (error) => ({
 
 export const saveExpense = (expense) => ({
   type: SAVE_EXPENSE,
+  expense,
+});
+
+export const deleteExpense = (expense) => ({
+  type: DELETE_EXPENSE,
   expense,
 });
 
