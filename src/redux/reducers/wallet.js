@@ -26,11 +26,6 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: [...state.expenses, action.expense],
     };
-  // case EXPENSE_SUM:
-  //   return {
-  //     ...state,
-  //     sumExp: sumExp + action.sum,
-  //   };
   default:
     return state;
   }

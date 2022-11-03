@@ -53,7 +53,7 @@ class WalletForm extends Component {
         <label htmlFor="description">
           Descrição
           <input
-            data-testid="value-input"
+            data-testid="description-input"
             name="description"
             value={ description }
             onChange={ this.handleInputValue }
@@ -62,7 +62,7 @@ class WalletForm extends Component {
         <label htmlFor="value">
           Valor
           <input
-            data-testid="description-input"
+            data-testid="value-input"
             name="value"
             value={ value }
             onChange={ this.handleInputValue }
