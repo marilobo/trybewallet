@@ -4,26 +4,27 @@ import App from '../App';
 import Wallet from '../pages/Wallet';
 import { renderWithRouterAndRedux, renderWithRedux } from './helpers/renderWith';
 
-const initialState = {
+const moedas = [
+  'USD',
+  'CAD',
+  'GBP',
+  'ARS',
+  'BTC',
+  'LTC',
+  'EUR',
+  'JPY',
+  'CHF',
+  'AUD',
+  'CNY',
+  'ILS',
+  'ETH',
+  'XRP',
+  'DOGE',
+];
+let initialState = {
   user: {},
   wallet: {
-    currencies: [
-      'USD',
-      'CAD',
-      'GBP',
-      'ARS',
-      'BTC',
-      'LTC',
-      'EUR',
-      'JPY',
-      'CHF',
-      'AUD',
-      'CNY',
-      'ILS',
-      'ETH',
-      'XRP',
-      'DOGE',
-    ],
+    currencies: [...moedas],
     expenses: [],
     editor: false,
     idToEdit: 0,
@@ -76,5 +77,61 @@ describe('Bloco de testes sobre a página Wallet', () => {
 
     const addButton = screen.getByRole('button', { name: 'Adicionar despesa' });
     expect(addButton).toBeInTheDocument();
+  });
+
+  it('Testa elementos da Table', async () => {
+    initialState = {
+      user: {},
+      wallet: {
+        currencies: [...moedas],
+        expenses: [{
+          id: 0,
+          value: '12',
+          description: 'batata',
+          currency: 'USD',
+          method: 'Dinheiro',
+          tag: 'Alimentação',
+          exchangeRates: {
+            USD: {
+              code: 'USD',
+              codein: 'BRL',
+              name: 'Dólar Americano/Real Brasileiro',
+              bid: '5.0461',
+              ask: '5.0473',
+            },
+          },
+        },
+        ],
+        editor: false,
+        idToEdit: 0,
+        errorMessage: '',
+      },
+    };
+    renderWithRedux(<Wallet />, { initialState });
+
+    const tableElement = screen.getByRole('table');
+    expect(tableElement).toBeInTheDocument();
+
+    const descriptionInput = screen.getByTestId('description-input');
+    const valueInput = screen.getByTestId('value-input');
+    const addButton = screen.getByRole('button', { name: /Adicionar despesa/i });
+
+    userEvent.type(descriptionInput, 'batata');
+    userEvent.type(valueInput, '12');
+    userEvent.click(addButton);
+
+    const addCell = await screen.findByRole('cell', { name: /batata/i });
+    expect(addCell).toBeInTheDocument();
+
+    const totalValue = screen.getByTestId('total-field');
+    expect(totalValue).toHaveTextContent('60.57');
+
+    const editButton = screen.getByRole('button', { name: /Editar/i });
+    const deleteButton = screen.getByRole('button', { name: /Excluir/i });
+    expect(editButton).toBeInTheDocument();
+    expect(deleteButton).toBeInTheDocument();
+
+    userEvent.click(deleteButton);
+    expect(addCell).not.toBeInTheDocument();
   });
 });
