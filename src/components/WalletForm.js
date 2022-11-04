@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { saveExpense, thunkWalletAPI } from '../redux/actions';
+import { editedExpense, saveExpense, thunkWalletAPI } from '../redux/actions';
 import fetchFunction from '../helpers/fetchFunction';
 
 class WalletForm extends Component {
@@ -50,9 +50,8 @@ class WalletForm extends Component {
   };
 
   editExpense = () => {
-    const { walletReducer: { expenses, idToEdit } } = this.props;
-    const expenseToEdit = expenses[idToEdit];
-    return expenseToEdit;
+    const { dispatch } = this.props;
+    dispatch(editedExpense());
   };
 
   render() {
