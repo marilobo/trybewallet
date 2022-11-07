@@ -22,7 +22,9 @@ const moedas = [
   'DOGE',
 ];
 let initialState = {
-  user: {},
+  user: {
+    email: '',
+  },
   wallet: {
     currencies: [...moedas],
     expenses: [],
@@ -68,6 +70,7 @@ describe('Bloco de testes sobre a página Wallet', () => {
 
     const currencySelect = screen.getByTestId('currency-input');
     expect(currencySelect).toHaveValue('USD');
+    expect(currencySelect).toHaveLength(15);
 
     const methodSelect = screen.getByTestId('method-input');
     expect(methodSelect).toHaveValue('Dinheiro');
@@ -77,11 +80,16 @@ describe('Bloco de testes sobre a página Wallet', () => {
 
     const addButton = screen.getByRole('button', { name: 'Adicionar despesa' });
     expect(addButton).toBeInTheDocument();
+
+    const optionUSDT = screen.queryByRole('option', { name: 'USDT' });
+    expect(optionUSDT).not.toBeInTheDocument();
   });
 
   it('Testa elementos da Table', async () => {
     initialState = {
-      user: {},
+      user: {
+        email: 'mariana@email.com',
+      },
       wallet: {
         currencies: [...moedas],
         expenses: [{
@@ -126,12 +134,57 @@ describe('Bloco de testes sobre a página Wallet', () => {
     const totalValue = screen.getByTestId('total-field');
     expect(totalValue).toHaveTextContent('60.57');
 
-    const editButton = screen.getByRole('button', { name: /Editar/i });
     const deleteButton = screen.getByRole('button', { name: /Excluir/i });
-    expect(editButton).toBeInTheDocument();
     expect(deleteButton).toBeInTheDocument();
 
     userEvent.click(deleteButton);
     expect(addCell).not.toBeInTheDocument();
+  });
+
+  it('Testa botão editar', async () => {
+    initialState = {
+      user: {
+        email: 'mariana@email.com',
+      },
+      wallet: {
+        currencies: [...moedas],
+        expenses: [{
+          id: 0,
+          value: '2',
+          description: 'couve',
+          currency: 'USD',
+          method: 'Dinheiro',
+          tag: 'Lazer',
+          exchangeRates: {
+            USD: {
+              code: 'USD',
+              codein: 'BRL',
+              name: 'Dólar Americano/Real Brasileiro',
+              bid: '5.0461',
+              ask: '5.0473',
+            },
+          },
+        },
+        ],
+        editor: false,
+        idToEdit: 0,
+        errorMessage: '',
+      },
+    };
+    renderWithRedux(<Wallet />, { initialState });
+
+    const addCell = await screen.findByRole('cell', { name: /couve/i });
+    expect(addCell).toBeInTheDocument();
+
+    const editButton = screen.getByRole('button', { name: /Editar/i });
+    expect(editButton).toBeInTheDocument();
+
+    userEvent.click(editButton);
+
+    const editExpenseButton = screen.queryByRole('button', { name: /Editar despesa/i });
+    expect(editExpenseButton).toBeInTheDocument();
+
+    const addButton = screen.queryByRole('button', { name: /Adicionar despesa/i });
+    expect(addButton).not.toBeInTheDocument();
   });
 });

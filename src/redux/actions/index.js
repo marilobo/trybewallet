@@ -38,8 +38,9 @@ export const editExpense = (id) => ({
   id,
 });
 
-export const editedExpense = () => ({
+export const editedExpense = (expenses) => ({
   type: EDITED_EXPENSE,
+  expenses,
 });
 
 export function thunkWalletAPI() {

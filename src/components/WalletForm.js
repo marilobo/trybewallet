@@ -6,7 +6,7 @@ import fetchFunction from '../helpers/fetchFunction';
 
 class WalletForm extends Component {
   state = {
-    id: 0,
+    id: -1,
     value: '',
     description: '',
     currency: 'USD',
@@ -20,22 +20,16 @@ class WalletForm extends Component {
     dispatch(thunkWalletAPI());
   }
 
-  componentDidUpdate() {
-    const { walletReducer: { expenses, idToEdit } } = this.props;
-    console.log(expenses[idToEdit]);
-  }
-
   handleInputValue = ({ target }) => {
     this.setState({ [target.name]: target.value });
   };
 
   addExpense = async () => {
-    const { walletReducer } = this.props;
-    const { expenses } = walletReducer;
+    // const { walletReducer: { expenses } } = this.props;
     const filteredCoins = await fetchFunction();
-    this.setState(({
+    this.setState((prev) => ({
       exchangeRates: filteredCoins,
-      id: expenses.length,
+      id: prev.id + 1,
     }), () => this.sendToGlobalState());
   };
 
@@ -50,8 +44,21 @@ class WalletForm extends Component {
   };
 
   editExpense = () => {
+    const { walletReducer: { idToEdit, expenses } } = this.props;
+    const editedExpenses = expenses;
+    editedExpenses[idToEdit] = this.state;
+    editedExpenses[idToEdit].id = idToEdit;
+    this.setState(({}), () => this.sendEdit(editedExpenses));
+  };
+
+  sendEdit = (expenses) => {
     const { dispatch } = this.props;
-    dispatch(editedExpense());
+    dispatch(editedExpense(expenses));
+
+    this.setState({
+      value: '',
+      description: '',
+    });
   };
 
   render() {
