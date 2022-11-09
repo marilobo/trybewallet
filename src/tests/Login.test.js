@@ -7,7 +7,7 @@ const email = 'email-input';
 const password = 'password-input';
 
 describe('Bloco de testes sobre a página Login', () => {
-  it('Verifica se o botão de entrar Entrar está na tela desabilitado', () => {
+  it('Verifica se o botão Entrar está na tela e desabilitado', () => {
     renderWithRouterAndRedux(<App />);
 
     const getButton = screen.getByRole('button');

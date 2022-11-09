@@ -25,7 +25,6 @@ class WalletForm extends Component {
   };
 
   addExpense = async () => {
-    // const { walletReducer: { expenses } } = this.props;
     const filteredCoins = await fetchFunction();
     this.setState((prev) => ({
       exchangeRates: filteredCoins,
