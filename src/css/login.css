@@ -23,6 +23,7 @@
 
 .button , .input {
   border-radius: 5px;
+  border-style: none;
   font-weight: 700;
   height: 30px;
   margin-bottom: 10px;

@@ -4,3 +4,41 @@
   padding: 0;
 }
 
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.wallet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-div button {
+  background-color: rgb(181, 105, 137);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px 1px 0.1px rgba(0, 0, 0, 0.215);
+  color: white;
+  font-weight: 700;
+  height: 30px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+.button-div button:hover {
+  cursor: pointer;
+  font-size: 15px;
+  height: 32px;
+  width: 310px;
+}

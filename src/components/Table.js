@@ -21,10 +21,10 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
-        <table>
+      <div className="table-container">
+        <table className="table">
           <thead>
-            <tr>
+            <tr className="bliu">
               <th>Descrição</th>
               <th>Tag</th>
               <th>Método de pagamento</th>
