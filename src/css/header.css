@@ -5,10 +5,9 @@
 
 .header {
   align-items: center;
-  background-color: whitesmoke;
   display: flex;
   height: 100px;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 70px;
 }
 
