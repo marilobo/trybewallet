@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .header {
   align-items: center;
   display: flex;
@@ -18,10 +13,12 @@
 }
 
 .email {
+  color: rgb(50, 195, 143);
   margin-right: 20px;
 }
 
 .total-despesas {
+  color: rgb(45, 60, 115);
   display: flex;
 }
 
