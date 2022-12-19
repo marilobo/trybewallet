@@ -35,13 +35,15 @@ body {
   margin-bottom: 20px;
   margin-right: 20px;
   padding: 30px;
+  padding-top: 50px;
   width: 100%;
 }
 
 .button-div {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   width: 100%;
 }
 
