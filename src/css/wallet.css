@@ -1,0 +1,100 @@
+body {
+  background-color: rgb(131, 172, 204);
+  background-image: url('../img/foto-fundo.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.table-container {
+  align-items: center;
+  background-color: rgb(45, 60, 115);
+  border-radius: 15px;
+  box-shadow: 2px 2px 1px 0.1px rgba(0, 0, 0, 0.215);
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  top: 200px;
+  width: 1300px;
+}
+
+.table {
+  color: white;
+}
+
+.wallet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-div button {
+  background-color: rgb(50, 195, 143);
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: 2px 2px 1px 0.1px rgba(0, 0, 0, 0.215);
+  color: white;
+  font-size: 14pt;
+  font-weight: 700;
+  height: 35px;
+  margin-top: 20px;
+  width: 300px;
+}
+
+.button-div button:hover {
+  box-shadow: 3px 3px 2px 0.2px rgba(0, 0, 0, 0.215);
+  cursor: pointer;
+  font-size: 15pt;
+  height: 40px;
+  margin-top: 15px;
+  width: 310px;
+}
+
+.main-container {
+  align-items: space-around;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 1000px;
+  z-index: 1;
+}
+
+.wallet-container label {
+  color: rgb(45, 60, 115);
+  font-size: 14pt;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.wallet-container label input , .wallet-container label select {
+  border-color: rgb(45, 60, 115);
+  border-radius: 5px;
+  border-style: double;
+  border-width: 1px;
+  color: rgb(45, 60, 115);
+  height: 30px;
+  margin-left: 10px;
+}
+
+.wallet-container label:first-of-type input {
+  width: 600px;
+}
+

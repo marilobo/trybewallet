@@ -1,0 +1,37 @@
+.header {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  margin-bottom: 70px;
+}
+
+.logo-header {
+  margin: 15px;
+  margin-bottom: 29px;
+  width: 230px;
+}
+
+.email {
+  color: rgb(50, 195, 143);
+  margin-right: 20px;
+}
+
+.total-despesas {
+  color: rgb(45, 60, 115);
+  display: flex;
+}
+
+.despesas {
+  margin-bottom: 5px;
+  margin-right: 5px;
+  width: 20px;
+}
+
+.email-container {
+  display: flex;
+}
+
+.email-logo {
+  margin-right: 5px;
+}
