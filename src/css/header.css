@@ -4,6 +4,7 @@
   height: 100px;
   justify-content: space-around;
   margin-bottom: 70px;
+  margin-top: 30px;
 }
 
 .logo-header {
@@ -14,12 +15,16 @@
 
 .email {
   color: rgb(50, 195, 143);
+  font-size: 14pt;
+  font-weight: 600;
   margin-right: 20px;
 }
 
 .total-despesas {
   color: rgb(45, 60, 115);
   display: flex;
+  font-size: 14pt;
+  font-weight: 600;
 }
 
 .despesas {

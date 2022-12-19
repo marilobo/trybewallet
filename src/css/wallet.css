@@ -26,17 +26,21 @@ body {
 }
 
 .wallet-container {
+  background-color: rgba(225, 229, 235, 0.49);
   display: flex;
   flex-wrap: wrap;
+  height: 200px;
   justify-content: space-between;
-  margin-bottom: 70px;
-  margin-left: 20px;
+  margin-bottom: 20px;
   margin-right: 20px;
+  padding: 30px;
+  width: 100%;
 }
 
 .button-div {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -49,7 +53,7 @@ body {
   font-size: 14pt;
   font-weight: 700;
   height: 35px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 300px;
 }
 
@@ -58,7 +62,7 @@ body {
   cursor: pointer;
   font-size: 15pt;
   height: 40px;
-  margin-top: 15px;
+  margin-bottom: 15px;
   width: 310px;
 }
 

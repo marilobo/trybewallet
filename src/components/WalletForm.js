@@ -128,24 +128,25 @@ class WalletForm extends Component {
               <option>Saúde</option>
             </select>
           </label>
-          <div className="button-div">
-            { !editor
-              ? (
-                <button
-                  type="button"
-                  onClick={ this.addExpense }
-                >
-                  Adicionar despesa
-                </button>)
-              : (
-                <button
-                  type="button"
-                  onClick={ this.editExpense }
-                >
-                  Editar despesa
-                </button>)}
-          </div>
         </div>
+        <div className="button-div">
+          { !editor
+            ? (
+              <button
+                type="button"
+                onClick={ this.addExpense }
+              >
+                Adicionar despesa
+              </button>)
+            : (
+              <button
+                type="button"
+                onClick={ this.editExpense }
+              >
+                Editar despesa
+              </button>)}
+        </div>
+
       </div>
     );
   }
