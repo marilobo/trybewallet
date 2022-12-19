@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { editedExpense, saveExpense, thunkWalletAPI } from '../redux/actions';
 import fetchFunction from '../helpers/fetchFunction';
 import '../css/wallet.css';
+import Header from './Header';
 
 class WalletForm extends Component {
   state = {
@@ -67,6 +68,7 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     return (
       <div className="wallet-container">
+        <Header />
         <label htmlFor="description">
           Descrição
           <input

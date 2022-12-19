@@ -11,7 +11,7 @@ class Header extends Component {
     const { email, expenses } = this.props;
     return (
       <div className="header">
-        <img src={ logo } alt="Logo TrybeWallet" className="logo" />
+        <img src={ logo } alt="Logo TrybeWallet" className="logo-header" />
         <span className="total-despesas">
           <img src={ despesas } alt="Despesas" className="despesas" />
           <span>Total de despesas: </span>
