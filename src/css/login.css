@@ -26,32 +26,36 @@
 .button , .input {
   border-radius: 5px;
   border-style: none;
+  font-size: 12pt;
   font-weight: 700;
-  height: 30px;
+  height: 35px;
   margin-bottom: 10px;
-  width: 250px;
+  width: 300px;
 }
 
 .button:disabled {
   background-color: rgba(45, 60, 115, 0.288);
   color: white;
   letter-spacing: 0.5px;
+  margin-top: 6px;
 }
 
 .button:enabled {
   background-color: rgba(45, 60, 115, 0.719);
   box-shadow: 2px 2px 1px 0.1px rgba(0, 0, 0, 0.215);
   color: white;
-  font-size: 14px;
+  font-size: 12pt;
   letter-spacing: 1px;
+  margin-top: 6px;
 }
 
 .button:hover:enabled {
   cursor: pointer;
-  font-size: 15px;
-  height: 32px;
+  font-size: 14pt;
+  height: 38px;
   letter-spacing: 1.5px;
-  width: 252px;
+  margin-top: 3px;
+  width: 305px;
 }
 
 .login-container {
@@ -60,9 +64,9 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: 350px;
   justify-content: center;
-  width: 350px;
+  width: 450px;
 }
 
 .logo {
