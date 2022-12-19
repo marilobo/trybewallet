@@ -13,9 +13,9 @@ body {
   border-radius: 15px;
   box-shadow: 2px 2px 1px 0.1px rgba(0, 0, 0, 0.215);
   display: flex;
-  height: 500px;
   justify-content: center;
   margin: auto;
+  min-height: 500px;
   position: relative;
   top: 200px;
   width: 1300px;
@@ -23,6 +23,7 @@ body {
 
 .table {
   color: white;
+  margin-top: 200px;
 }
 
 .wallet-container {
