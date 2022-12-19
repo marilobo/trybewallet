@@ -54,9 +54,11 @@ body {
 }
 
 .button-div button:hover {
+  box-shadow: 3px 3px 2px 0.2px rgba(0, 0, 0, 0.215);
   cursor: pointer;
   font-size: 15pt;
   height: 40px;
+  margin-top: 15px;
   width: 310px;
 }
 
