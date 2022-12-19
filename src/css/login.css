@@ -46,7 +46,7 @@
   color: white;
   font-size: 12pt;
   letter-spacing: 1px;
-  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .button:hover:enabled {
@@ -54,7 +54,7 @@
   font-size: 14pt;
   height: 38px;
   letter-spacing: 1.5px;
-  margin-top: 3px;
+  margin-bottom: 3px;
   width: 305px;
 }
 
