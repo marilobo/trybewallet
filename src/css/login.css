@@ -8,6 +8,10 @@
 .form {
   align-items: center;
   background-color: rgb(131, 172, 204);
+  background-image: url('../img/foto-fundo.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;

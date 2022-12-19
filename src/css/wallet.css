@@ -2,8 +2,8 @@ body {
   background-color: rgb(131, 172, 204);
   background-image: url('../img/foto-fundo.png');
   background-position: bottom;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
