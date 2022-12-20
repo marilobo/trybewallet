@@ -77,6 +77,7 @@ class WalletForm extends Component {
               name="description"
               value={ description }
               onChange={ this.handleInputValue }
+              className="description"
             />
           </label>
           <label htmlFor="value">
@@ -120,6 +121,7 @@ class WalletForm extends Component {
               onChange={ this.handleInputValue }
               name="tag"
               value={ tag }
+              className="category"
             >
               <option>Alimentação</option>
               <option>Lazer</option>

@@ -9,6 +9,7 @@ import emailLogo from '../img/email.png';
 class Header extends Component {
   render() {
     const { email, expenses } = this.props;
+    const emailaddress = JSON.parse(localStorage.getItem('emailTrybeWallet')) || email;
     return (
       <div className="header">
         <img src={ logo } alt="Logo TrybeWallet" className="logo-header" />
@@ -30,7 +31,7 @@ class Header extends Component {
         </span>
         <span className="email-container">
           <img src={ emailLogo } alt="Email logo" className="email-logo" />
-          <p className="email" data-testid="email-field">{email}</p>
+          <p className="email" data-testid="email-field">{emailaddress}</p>
         </span>
       </div>
     );

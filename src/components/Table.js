@@ -24,7 +24,7 @@ class Table extends Component {
       <div className="table-container">
         <table className="table">
           <thead>
-            <tr className="bliu">
+            <tr className="table-row">
               <th>Descrição</th>
               <th>Tag</th>
               <th>Método de pagamento</th>
@@ -38,7 +38,7 @@ class Table extends Component {
           </thead>
           <tbody>
             { expenses.map((e) => (
-              <tr key={ e.id }>
+              <tr className="table-row" key={ e.id }>
                 <td>{ e.description }</td>
                 <td>{ e.tag }</td>
                 <td>{ e.method }</td>

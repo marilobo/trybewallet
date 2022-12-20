@@ -27,6 +27,10 @@
   font-weight: 600;
 }
 
+.total-despesas * {
+  margin-left: 5px;
+}
+
 .despesas {
   margin-bottom: 5px;
   margin-right: 5px;
