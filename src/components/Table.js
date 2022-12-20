@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteExpense, editExpense } from '../redux/actions';
 import '../css/wallet.css';
+import deleteBtn from '../img/delete-btn.svg';
+import editBtn from '../img/edit-btn.svg';
 
 class Table extends Component {
   deleteExpenseButton = (e) => {
@@ -48,22 +50,22 @@ class Table extends Component {
                 <td>{ (+e.exchangeRates[e.currency].ask * e.value).toFixed(2) }</td>
                 <td>Real</td>
                 <td>
-                  <button
-                    type="button"
+                  <input
+                    type="image"
+                    alt="Delete"
+                    src={ editBtn }
+                    className="btn-img"
                     data-testid="edit-btn"
                     onClick={ () => this.editExpenseButton(e) }
-                  >
-                    Editar
-
-                  </button>
-                  <button
-                    type="button"
+                  />
+                  <input
+                    type="image"
+                    alt="Edit"
+                    src={ deleteBtn }
+                    className="btn-img"
                     data-testid="delete-btn"
                     onClick={ () => this.deleteExpenseButton(e) }
-                  >
-                    Excluir
-
-                  </button>
+                  />
                 </td>
               </tr>
             )) }

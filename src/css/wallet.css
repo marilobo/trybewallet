@@ -115,3 +115,13 @@ body {
   padding-right: 15px;
   text-align: center;
 }
+
+.btn-img {
+  text-decoration: none;
+  width: 35px;
+}
+
+.btn-img:hover {
+  transform: translateY(-2.5px);
+  transition: 500ms;
+}
