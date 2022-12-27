@@ -1,8 +1,8 @@
 # TrybeWallet
 
-Este é um projeto desenvolvido durante o módulo de Front-end do curso de Desenvolvimento Web da Trybe.
+Este é um projeto desenvolvido durante o módulo de Front-end do curso de Desenvolvimento Web da Trybe. Para o seu desenvolvimento, utilizamos JavaScript, React, Redux e React Testing Library.
 
-<strong>As pastas components, context, images, pages, services, style e tests, assim como seus conteúdos, foram desenvolvidos por mim. O restante da aplicação é de autoria da Trybe.</strong>
+<strong>As pastas components, css, img, helpers, pages, redux e tests, assim como seus conteúdos, foram desenvolvidos por mim. O restante da aplicação é de autoria da Trybe.</strong>
 
 <details>
 <summary><strong>O que foi desenvolvido</strong></summary><br />
