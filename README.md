@@ -5,7 +5,7 @@ Este é um projeto desenvolvido durante o módulo de Front-end do curso de Desen
 <strong>As pastas components, context, images, pages, services, style e tests, assim como seus conteúdos, foram desenvolvidos por mim. O restante da aplicação é de autoria da Trybe.</strong>
 
 <details>
-<summary><strong>O que foi desenvolvido</strong></summary>
+<summary><strong>O que foi desenvolvido</strong></summary><br />
 Neste projeto foi desenvolvida uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
 
 * Adicionar, remover e editar um gasto;
